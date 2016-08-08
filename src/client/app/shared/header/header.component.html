@@ -2,7 +2,7 @@
   <a class="navbar-brand hidden-sm-down" [routerLink]="['/']">Project name</a>
   <button class="navbar-toggler hidden-sm-up" type="button" (click)="isCollapsed = !isCollapsed" aria-controls="mainNavBar"
     aria-expanded="false" aria-label="Toggle navigation">
-    &#9776;
+    <span class="fa fa-bars"></span>
   </button>
   <div class="collapse navbar-toggleable-xs" id="mainNavBar" [ngbCollapse]="isCollapsed" (click)="isCollapsed=true">    
     <ul class="nav navbar-nav">
