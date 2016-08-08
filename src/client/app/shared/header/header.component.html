@@ -4,10 +4,19 @@
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="fa fa-bars"></span>
   </button>
-  <div class="collapse navbar-toggleable-xs" id="mainNavBar" [ngbCollapse]="isCollapsed" (click)="isCollapsed=true">    
+  <div class="collapse navbar-toggleable-xs" id="mainNavBar" [ngbCollapse]="isCollapsed" (click)="isCollapsed=true">
     <ul class="nav navbar-nav">
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" [routerLink]="['/']">HOME</a></li>
       <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/about']">ABOUT</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-sm-right">
+      <li *ngIf="!auth.authenticated()"><a class="btn btn-link" (click)="auth.login()"><span class="fa fa-user"></span> entrar</a></li>
+      <li class="dropdown" *ngIf="auth.authenticated()" ngbDropdown>
+        <a id="dropdownMenuUser" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle><img src="{{auth?.profile?.picture}}" class="img-circle user-profile-image" /> <span>{{auth?.profile?.name}}</span><span class="caret"></span></a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuUser">
+          <li class="dropdown-item"><a class="btn btn-link" (click)="auth.logout()">salir</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
