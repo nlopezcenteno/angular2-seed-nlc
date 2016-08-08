@@ -22,6 +22,7 @@ export class ProjectConfig extends SeedConfig {
       ...this.NPM_DEPENDENCIES,
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
+      { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true }
     ];
 
     // Add `local` third-party libraries to be injected/bundled.
@@ -33,6 +34,15 @@ export class ProjectConfig extends SeedConfig {
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
+
+    // this.SYSTEM_CONFIG_DEV.paths['@ng-bootstrap'] =
+    //   `${this.APP_BASE}node_modules/@ng-bootstrap/ng-bootstrap/index.js`;
+
+    // this.SYSTEM_BUILDER_CONFIG.packages['@ng-bootstrap'] = {
+    //     main: 'index.js',
+    //     defaultExtension : 'js'
+    // };
+
   }
 
 }

@@ -310,6 +310,7 @@ export class SeedConfig {
     packageConfigPaths: [
       `/node_modules/*/package.json`,
       `/node_modules/**/package.json`,
+      `/node_modules/@ng-bootstrap/*/package.json`,
       `/node_modules/@angular/*/package.json`
     ],
     paths: {
